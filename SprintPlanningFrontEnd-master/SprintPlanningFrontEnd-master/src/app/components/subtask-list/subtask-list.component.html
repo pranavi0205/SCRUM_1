@@ -1,0 +1,22 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+ <hr>
+ <div *ngFor="let subtask of subtasks;let i = index">
+     <mat-expansion-panel  >
+         <mat-expansion-panel-header>
+           <mat-panel-title>
+             {{subtask.subtaskName}}
+           </mat-panel-title>
+           <mat-panel-description>
+             {{subtask.description}}
+           </mat-panel-description>
+         </mat-expansion-panel-header>
+         <p>{{subtask.startDate}}</p>
+         <button mat-icon-button  style="margin: 7px;" (click)="updateSubTask(i)"><mat-icon>edit</mat-icon></button>
+         <button mat-icon-button  style="margin: 7px;"(click)="removesubTask(subtask.subtaskId)"><mat-icon>delete_outline</mat-icon></button>
+       </mat-expansion-panel>
+ </div>
+ 
+ <button mat-raised-button style="margin: 20px;"color="primary" (click)="addSubTask()">AddSubTask</button>
+ 
+ 

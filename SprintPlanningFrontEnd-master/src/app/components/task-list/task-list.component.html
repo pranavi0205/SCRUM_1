@@ -1,0 +1,59 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<hr>
+<div class="example-headers-align"*ngFor="let task of tasks;let i = index">
+    <mat-expansion-panel hideToggle (opened)="viewSubTasks(task.taskId)" (opened)="panelOpenState = true"
+    (closed)="panelOpenState = false">
+        <mat-expansion-panel-header [collapsedHeight]="'80px'" [expandedHeight]="'80px'">
+          <mat-panel-title class="fonty">
+            {{task.taskName}}
+          </mat-panel-title>
+          <mat-panel-description class="description">
+            {{task.description}}
+            <div>
+              <button mat-mini-fab color="primary"  style="margin: 7px; " (click)="updateTask(i)"><mat-icon>edit</mat-icon></button>
+              <button mat-mini-fab color="warn"  style="margin: 7px;"(click)="removeTask(task.taskId)"><mat-icon>delete_outline</mat-icon></button>
+              <button mat-mini-fab color="accent"  style="margin: 7px;"(click)="addSubTask(task.taskId)"><mat-icon>add_outline</mat-icon></button>
+        
+            </div>
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <p>{{task.startDate}}</p>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+ <hr>
+ <div  *ngFor="let subtask of subtasks;let i = index">
+   <div *ngIf="subtask.primarytaskId===task.taskId">
+  
+     <mat-expansion-panel  >
+         <mat-expansion-panel-header>
+           <mat-panel-title class="subtaskfont">
+            {{subtask.subtaskName}}
+           </mat-panel-title>
+           <mat-panel-description class="description">
+             {{subtask.description}}
+             <div>
+              <button mat-mini-fab color="primary" style="margin: 7px;" (click)="updateSubTask(i)"><mat-icon>edit</mat-icon></button>
+              <button mat-mini-fab color="warn"  style="margin: 7px;"(click)="removesubTask(subtask.subtaskId)"><mat-icon>delete_outline</mat-icon></button>
+              
+             </div>
+
+           </mat-panel-description>
+         </mat-expansion-panel-header>
+         <p>Status:{{subtask.status}}</p>
+         <p>Priority:{{subtask.priority}}</p>
+         <p>StartDate:{{subtask.startDate}}</p>
+         <p>EndDate:{{subtask.endDate}}</p>
+         <p>Estimated Hours:{{subtask.estimatedHours}}</p>
+      
+         
+       </mat-expansion-panel>
+       <br>
+   </div>
+       
+ </div>
+      </mat-expansion-panel>
+      
+</div>
+
+<button mat-raised-button style="margin: 20px;"color="primary" (click)="addTask()">Add Task</button>

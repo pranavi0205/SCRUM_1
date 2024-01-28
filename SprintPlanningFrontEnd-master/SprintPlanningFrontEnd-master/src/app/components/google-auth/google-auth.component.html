@@ -1,0 +1,32 @@
+<div  class="cardList" >
+  <img [src]="myImage" alt="image" width='520' height='520'>
+  <mat-card class="box  shadow-lg p-3 mb-5 bg-white rounded w-25 p-4" style="text-align: center;">
+    <h3>Sign In</h3>
+   <br>
+    <form class="example-form">
+      <mat-card-content>
+        <mat-form-field class="example-full-width w-100 p-4">
+          <input matInput placeholder="Username"  name="username" [(ngModel)]="username" >
+        </mat-form-field>
+        <br>
+        <mat-form-field class="example-full-width w-100 p-4">
+          <input matInput autocomplete="off" type="password" placeholder="Password" name="password" [(ngModel)]="password" >
+          
+        </mat-form-field>
+        <br>
+      </mat-card-content>
+       <button  mat-stroked-button color="primary" class="btn"(click)="signIn()" >Sign in</button>
+       <br>
+       <br>
+       <button class="btn1" href="/users/googleauth" style="text-transform:none"(click)="singInWithGoogle('Google');">
+        <img width="20px" style="margin-bottom:3px; margin-right:5px" alt="Google sign-in" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/512px-Google_%22G%22_Logo.svg.png" />
+          Sign in with Google
+       </button>
+       
+    </form>
+  </mat-card>
+</div>
+  
+
+
+
