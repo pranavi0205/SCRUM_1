@@ -7,10 +7,8 @@ This Project was generated using Spring Initialiser and Spring Tool Suite was us
 
 - [JDK 11](https://www.oracle.com/java/technologies/downloads/#java11)
 - [Maven 4](https://maven.apache.org)
-- [Tomcat 9]()
 - [STS v3.9.10](https://download.springsource.com/release/TOOLS/update/3.9.10.RELEASE/e4.13/springsource-tool-suite-3.9.10.RELEASE-e4.13.0-updatesite.zip)
 
-`Tomcat setup is not needed if STS is used`
 
 ## Running the application locally
 
